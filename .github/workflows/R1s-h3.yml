@@ -10,11 +10,11 @@ env:
   REPO_BRANCH: master
   CONFIG_FILE: configs/R1s-h3.config
   DIY_SCRIPT: diy-script.sh
-  CLASH_KERNEL: sunxi
+  CLASH_KERNEL: cortexa7
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: cortexa7
+  FIRMWARE_TAG: sunxi
   TZ: Asia/Shanghai
 
 jobs:
