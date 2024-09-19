@@ -1,4 +1,4 @@
-name: R1s-h3 cut OpenWrt
+name: R1s-h5 cut OpenWrt
 
 on:
   workflow_dispatch:
