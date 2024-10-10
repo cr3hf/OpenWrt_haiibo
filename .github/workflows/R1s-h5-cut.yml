@@ -14,7 +14,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: sunxi
+  FIRMWARE_TAG: sunxi-H5
   TZ: Asia/Shanghai
 
 jobs:
