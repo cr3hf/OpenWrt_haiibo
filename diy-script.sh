@@ -19,7 +19,6 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
 
-
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -42,8 +41,8 @@ git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
 # 科学上网插件
-# git_sparse_clone main https://github.com/fw876/helloworld luci-app-helloworld
-# git clone --depth=1 https://github.com/fw876/helloworld package/helloworld
+#git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
+git clone --depth=1 -b main https://github.com/fw876/helloworld package/helloworld
 git clone --depth=1 https://github.com/liuran001/openwrt-packages/tree/packages/luci-app-ssr-plus package/luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
