@@ -150,7 +150,8 @@ jobs:
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
         cat sha256sums
-        cp $OPENWRT_PATH/.config build.config
+        # cp $OPENWRT_PATH/.config build.config
+        cp $OPENWRT_PATH/.config "${{ env.SOURCE_REPO }}-firmware-${{ env.DEVICE_TARGET }}-build.config"  # 修改文件名
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
         tar -zcf Packages.tar.gz packages
         rm -rf packages feeds.buildinfo version.buildinfo
