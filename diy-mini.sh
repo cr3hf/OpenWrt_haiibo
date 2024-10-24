@@ -118,5 +118,8 @@ sed -i 's|admin\\|admin\\/services\\|g' feeds/luci/applications/luci-app-dockerm
 # 取消对 samba4 的菜单调整
 # sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
 
+sed -i 's|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|src-git luci https://github.com/coolsnowwolf/luci|g' "feeds.conf.default"
+cat feeds.conf.default
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
