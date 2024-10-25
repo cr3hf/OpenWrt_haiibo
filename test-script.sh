@@ -13,14 +13,22 @@ sed -i 's|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|sr
 cat feeds.conf.default
 
 # 移除要替换的包
+echo
+ls feeds/luci/themes/
+echo "删除开始!"
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-netgear
+rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
+echo "删除结束!"
+echo
+ls feeds/luci/themes/
+echo
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
