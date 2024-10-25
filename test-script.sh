@@ -142,6 +142,8 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
-
+echo "[Run]:./scripts/feeds update -a"
 ./scripts/feeds update -a
+echo "[Run]:./scripts/feeds install -a"
 ./scripts/feeds install -a
+echo "[Run]:Finish"
