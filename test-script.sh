@@ -18,7 +18,7 @@ cat feeds.conf.default
 
 # 移除要替换的包
 echo
-ls feeds/luci/themes/
+ls feeds/luci/applications/
 echo "删除开始!"
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
@@ -29,9 +29,11 @@ rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/luci/applications/luci-app-passwall2
 echo "删除结束!"
 echo
-ls feeds/luci/themes/
+ls feeds/luci/applications/
 echo
 
 # Git稀疏克隆，只克隆指定目录到本地
@@ -63,7 +65,7 @@ git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebro
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/helloworld
 #git clone --depth=1 https://github.com/liuran001/openwrt-packages/tree/packages/luci-app-ssr-plus package/luci-app-ssr-plus
 #git clone --depth=1 https://github.com/liuran001/openwrt-packages/packages/luci-app-ssr-plus package/luci-app-ssr-plus
-git_sparse_clone packages https://github.com/liuran001/openwrt-packages/ luci-app-ssr-plus
+git_sparse_clone packages https://github.com/liuran001/openwrt-packages luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
