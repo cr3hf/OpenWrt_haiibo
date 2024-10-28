@@ -29,8 +29,6 @@ rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
-rm -rf feeds/luci/applications/luci-app-passwall
-rm -rf feeds/luci/applications/luci-app-passwall2
 echo "删除结束!"
 echo
 ls feeds/luci/applications/
@@ -67,10 +65,10 @@ git clone --depth=1 -b main https://github.com/fw876/helloworld package/hellowor
 #git clone --depth=1 https://github.com/liuran001/openwrt-packages/packages/luci-app-ssr-plus package/luci-app-ssr-plus
 git_sparse_clone packages https://github.com/liuran001/openwrt-packages luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
+## git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+## git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
 # Themes
 git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
