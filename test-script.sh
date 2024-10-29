@@ -11,16 +11,29 @@
 
 sed -i 's|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|src-git luci https://github.com/coolsnowwolf/luci|g' "feeds.conf.default"
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+#sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+
+
+sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
+
 cat feeds.conf.default
 
-./scripts/feeds update -a
-./scripts/feeds install -a
+./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+./scripts/feeds install -a 
+
+
+# ./scripts/feeds update -a
+# ./scripts/feeds install -a
 
 
 # 移除要替换的包
 echo
-ls feeds/luci/applications/
+ls feeds/luci/packages/
 echo "删除开始!"
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
@@ -31,9 +44,10 @@ rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
+
 echo "删除结束!"
 echo
-ls feeds/luci/applications/
+ls feeds/luci/packages/
 echo
 
 # Git稀疏克隆，只克隆指定目录到本地
