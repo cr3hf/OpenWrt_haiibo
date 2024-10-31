@@ -81,6 +81,7 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages packa
 ## git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
+git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 # Themes
 git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
