@@ -45,10 +45,13 @@ git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/networ
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/helloworld
-git clone --depth=1 https://github.com/liuran001/openwrt-packages/tree/packages/luci-app-ssr-plus package/luci-app-ssr-plus
+# git clone --depth=1 https://github.com/liuran001/openwrt-packages/tree/packages/luci-app-ssr-plus package/luci-app-ssr-plus
+git_sparse_clone packages https://github.com/liuran001/openwrt-packages luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 # Themes
