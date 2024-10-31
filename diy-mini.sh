@@ -39,6 +39,7 @@ git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-a
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 # git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
+
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/helloworld
 git_sparse_clone packages https://github.com/liuran001/openwrt-packages luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
