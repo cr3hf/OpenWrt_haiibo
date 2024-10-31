@@ -9,25 +9,24 @@
 # TTYD 免登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-sed -i 's|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|src-git luci https://github.com/coolsnowwolf/luci|g' "feeds.conf.default"
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-#sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+#sed -i 's|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|src-git luci https://github.com/coolsnowwolf/luci|g' "feeds.conf.default"
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+##sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 
-#sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-#sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
+##sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+##sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
 
 cat feeds.conf.default
 
-#./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns
-#rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
-#rm -rf feeds/packages/utils/v2dat
-#rm -rf feeds/packages/lang/golang
-#git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
-#./scripts/feeds install -a 
+##./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns
+##rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+##rm -rf feeds/packages/utils/v2dat
+##rm -rf feeds/packages/lang/golang
+##git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+##./scripts/feeds install -a 
 
-
-./scripts/feeds update -a
-./scripts/feeds install -a
+#./scripts/feeds update -a
+#./scripts/feeds install -a
 
 
 # 移除要替换的包
@@ -43,7 +42,6 @@ rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
-
 echo "删除结束!"
 echo
 ls feeds/luci/packages/
@@ -72,7 +70,6 @@ git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebro
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
 
-
 # 科学上网插件
 #git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/helloworld
@@ -82,8 +79,8 @@ git_sparse_clone packages https://github.com/liuran001/openwrt-packages luci-app
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 ## git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 ## git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
-#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
 # Themes
 git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
