@@ -12,10 +12,15 @@
 sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
 
-cat feeds.conf.default
-
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+echo >> feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+./scripts/feeds update istore
+./scripts/feeds install -d y -p istore luci-app-store
+
+cat feeds.conf.default
 
 
 ## 移除要替换的包
@@ -59,8 +64,9 @@ git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebro
 # git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
-git_sparse_clone main https://github.com/jjm2473/openwrt-apps homebox luci-app-fan luci-app-homebox
+# git_sparse_clone main https://github.com/jjm2473/openwrt-apps homebox luci-app-fan luci-app-homebox
 
+git_sparse_clone openwrt-23.05 https://github.com/shidahuilang/openwrt-package luci-app-homebox luci-app-istorego luci-app-istorepanel luci-app-istorex luci-app-ssr-plus luci-theme-argon luci-app-argon-config luci-app-bypass 
 
 # 科学上网插件
 #git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
@@ -78,15 +84,13 @@ git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclas
 
 
 # Themes
-# git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
-# git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone --depth=1 -b master https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
-git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
-git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
-git_sparse_clone main https://github.com/haiibo/packages luci-theme-atmaterial luci-theme-opentomcat luci-theme-netgear
-# git clone --depth=1 https://github.com/jerrykuku/luci-theme-atmaterial package/luci-theme-atmaterial
+# git clone --depth=1 -b master https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
+# git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+# git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+
+# git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
+# git_sparse_clone main https://github.com/haiibo/packages luci-theme-atmaterial luci-theme-opentomcat luci-theme-netgear
 
 
 # 更改 Argon 主题背景
@@ -117,8 +121,8 @@ git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-ap
 git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
 
 # iStore
-git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
-git_sparse_clone main https://github.com/linkease/istore luci
+# git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+# git_sparse_clone main https://github.com/linkease/istore luci
 
 # 在线用户
 git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
